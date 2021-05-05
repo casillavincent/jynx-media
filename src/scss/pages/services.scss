@@ -1,0 +1,135 @@
+// Services
+.services {
+   height: auto;
+   margin-top: 85px;
+
+   // Title content
+   .title {
+      padding: 25px;
+      margin: auto;
+      height: auto;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1000px;
+      @media screen and (min-width: 50em) {
+         height: 100vh;
+         padding-left: 7%;
+         min-height: 600px;
+      }
+
+      h1 {
+         font-family: $brand_font_02;
+         text-transform: uppercase;
+      }
+      p {
+         font-weight: 400;
+         font-family: $brand_font_01;
+         font-size: 1.5em;
+         @media screen and (min-width: 50em) {
+            font-size: 3em;
+         }
+      }
+   }
+
+   // Services
+   .services-items {
+      width: 100%;
+   }
+
+   // Single
+   .services-items .service-item {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      @media screen and (min-width: 50em) {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         align-items: start;
+         max-width: 90%;
+         margin: auto;
+         grid-gap: 20px;
+      }
+
+      // Image
+      img {
+         width: 100%;
+         height: auto;
+
+         @media screen and (min-width: 25em) {
+            padding: 25px;
+         }
+         @media screen and (min-width: 50em) {
+            height: auto;
+            padding: 0px;
+            transition: all 0.2s ease-out;
+         }
+      }
+
+      // Text Content
+      .text-content {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         justify-content: flex-start;
+         padding: 25px;
+         @media screen and (min-width: 50em) {
+            padding: 40px;
+            border-top: 1px solid rgba($ui_color_02, 0.4);
+            height: 100%;
+            justify-content: center;
+         }
+
+         @media screen and (min-width: 75em) {
+            padding: 75px;
+         }
+
+         h2 {
+            font-family: $brand_font_01;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            @media screen and (min-width: 50em) {
+               font-size: 1.75em;
+            }
+         }
+         p.description {
+            margin-bottom: 15px;
+            color: $ui_color_02;
+         }
+
+         ul.examples-container {
+            li {
+               margin-left: 30px;
+               color: $ui_color_02;
+            }
+         }
+         .learn-more {
+            border: 1px solid $ui_color_02;
+            color: $ui_color_02;
+            text-decoration: none;
+            margin-left: 10px;
+            margin-top: 25px;
+            padding: 10px 25px;
+            @include center-items--row;
+            transition: all 0.3s ease-out;
+            svg {
+               margin-left: 5px;
+               transition: all 0.3s ease-out;
+            }
+            @media screen and (min-width: 50em) {
+               &:hover {
+                  padding: 10px 30px;
+                  color: $accent;
+                  border-color: $accent;
+                  svg {
+                     margin-left: 10px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

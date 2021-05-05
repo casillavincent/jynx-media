@@ -1,0 +1,403 @@
+/* 
+Since this is a small scale project, all styling will be contained inside index.scss
+*/
+
+/* 
+-------------------------------------------
+            ABSTRACTS
+-------------------------------------------
+*/
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200&family=Rubik:wght@400;500&display=swap");
+
+// Mixins
+@mixin center-items--col {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+@mixin center-items--row {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+// Variables
+$ui_color_01: #050305;
+$ui_color_02: #555555;
+$accent: #b25657;
+$brand_font_01: "Rubik", sans-serif;
+$brand_font_02: "Karla", sans-serif;
+/* 
+-------------------------------------------
+            BASE STYLES
+-------------------------------------------
+*/
+html {
+   * {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+      font-size: 1em;
+      font-family: $brand_font_02;
+   }
+   scroll-behavior: smooth;
+}
+
+/* 
+-------------------------------------------
+            TYPOGRAPHY RULES
+-------------------------------------------
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: 500;
+}
+
+p,
+blockquote {
+   line-height: 1.5;
+}
+/* 
+-------------------------------------------
+            Layouts
+-------------------------------------------
+*/
+
+// Header
+.site-header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 85px;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   z-index: 999;
+   background: rgba($ui_color_01, 0.97);
+
+   @media screen and (min-width: 50em) {
+      justify-content: space-around;
+      background: transparent;
+   }
+
+   // Logo
+   &__logo {
+      margin-left: 25px;
+      a {
+         text-decoration: none;
+         color: white;
+         font-family: $brand_font_01;
+         font-size: 1.5em;
+         text-transform: uppercase;
+      }
+   }
+
+   // Navigation Bar
+   &__navigation {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 999 !important;
+      margin: 85px 0px 0px 0px;
+      width: 100%;
+      height: 500px;
+      background: rgba($ui_color_01, 0.97);
+      display: none;
+      @media screen and (min-width: 50em) {
+         position: static;
+         width: 500px;
+         height: auto;
+         margin: 0px;
+         display: block !important;
+         background: transparent;
+      }
+
+      // Navigation items container
+      ul.nav-ul {
+         @include center-items--col;
+         height: inherit;
+         @media screen and (min-width: 50em) {
+            flex-direction: row;
+         }
+
+         // List Items
+         li {
+            list-style-type: none;
+            width: 100%;
+            @include center-items--col;
+            a {
+               text-decoration: none;
+               width: inherit;
+               padding: 25px 0px;
+               @include center-items--col;
+               color: white;
+               transition: all 0.35s ease-in-out;
+               &:hover {
+                  color: $accent;
+               }
+               @media screen and (min-width: 50em) {
+                  padding: 10px 0px;
+               }
+            }
+         }
+         // Single list item style with background
+         .li-item--sign-in {
+            a {
+               background: $accent;
+               border-radius: 100px;
+               width: 200px;
+               padding: 10px 0px;
+               margin-top: 10px;
+               &:hover {
+                  color: white;
+               }
+               @media screen and (min-width: 50em) {
+                  width: 125px;
+                  margin-left: 20px;
+                  margin-top: 0px;
+               }
+            }
+         }
+      }
+   } // end of navigation bar
+
+   // Hamburger
+   &__toggler {
+      padding: 0px;
+      margin: 0px;
+      margin-right: 10px;
+
+      background: none;
+      border-style: none;
+      color: white;
+      @media screen and (min-width: 50em) {
+         display: none;
+      }
+   }
+
+   // Toggle Items
+   .sidebar-on {
+      display: block !important;
+      @media screen and (max-width: 50em) {
+         animation: slide-in-right 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) alternate both;
+      }
+   }
+   // Keyframes
+   @keyframes slide-in-right {
+      0% {
+         transform: translateX(1000px);
+         opacity: 0;
+      }
+      100% {
+         transform: translateX(0);
+         opacity: 1;
+      }
+   }
+
+   .sidebar-off {
+      @media screen and (max-width: 50em) {
+         animation: slide-out-right 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+   }
+
+   @keyframes slide-out-right {
+      0% {
+         transform: translateX(0);
+         opacity: 1;
+      }
+      100% {
+         transform: translateX(1000px);
+         opacity: 0;
+      }
+   }
+}
+
+// ---------------- Footer ----------------
+footer {
+   color: white;
+   background: $ui_color_01;
+   width: 100%;
+   height: auto;
+   padding: 50px 0px;
+   hr {
+      margin: 50px auto;
+      opacity: 0.2;
+      max-width: 90%;
+   }
+   @media screen and (min-width: 50em) {
+      padding: 50px 0px;
+   }
+}
+// All Selectors
+.footer-col {
+   padding: 15px;
+   height: 100%;
+   width: auto;
+   li {
+      list-style-type: none;
+   }
+   a {
+      text-decoration: none;
+      color: white;
+   }
+   p,
+   a,
+   li,
+   label {
+      font-size: 0.9em;
+      line-height: 1.5;
+      @media screen and (min-width: 50em) {
+         font-size: 1em;
+         line-height: 1.5;
+      }
+   }
+   p.footer-title {
+      font-family: $brand_font_01;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      @media screen and (min-width: 50em) {
+         font-size: 1em;
+      }
+   }
+}
+
+// First Row
+.site-footer__row-01 {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 10px;
+   align-items: center;
+   width: 100%;
+   @media screen and (min-width: 30em) {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 80%;
+      margin: auto;
+   }
+
+   .footer-col-01 {
+      // Logo
+      p.logo {
+         font-family: $brand_font_01;
+         font-weight: 500;
+         font-size: 1em;
+         @media screen and (min-width: 50em) {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+         }
+      }
+   }
+
+   .footer-col-04 {
+      input.email-input {
+         background: none;
+         border-style: none;
+         border-bottom: 1px solid white;
+         margin-bottom: 10px;
+         width: 100%;
+         height: 30px;
+         color: white;
+         text-indent: 10px;
+         @media screen and (min-width: 50em) {
+            margin-bottom: 15px;
+         }
+      }
+      input.submit {
+         padding: 2px 6px;
+         background: transparent;
+         border: 1px solid white;
+         color: white;
+         transition: all 0.3s ease-in-out;
+         &:hover {
+            opacity: 1;
+            cursor: pointer;
+         }
+         @media screen and (min-width: 50em) {
+            padding: 5px 20px;
+         }
+      }
+   }
+}
+
+// Second Row
+.site-footer__row-02 {
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   @media screen and (min-width: 30em) {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 80%;
+      margin: auto;
+   }
+
+   // All column selectors in the second row
+   .footer-col {
+      p.shortened-location {
+         font-family: $brand_font_01;
+         font-weight: 500;
+         font-size: 1.75em;
+         text-transform: uppercase;
+         @media screen and (min-width: 50em) {
+            font-size: 3.5em;
+         }
+      }
+   }
+}
+
+/* 
+-------------------------------------------
+            PARTIALS
+-------------------------------------------
+*/
+@import "./partials/splash.scss";
+@import "./partials/about.scss";
+@import "./partials/mission.scss";
+
+@import "./pages/agency.scss";
+@import "./pages/services.scss";
+@import "./pages/work.scss";
+@import "./pages/contact.scss";
+/* 
+-------------------------------------------
+            COMPONENTS
+-------------------------------------------
+*/
+
+/* 
+-------------------------------------------
+            Toggled States
+-------------------------------------------
+*/
+.dark-header-state {
+   @media screen and (min-width: 50em) {
+      background: $ui_color_01;
+      a {
+         color: white !important;
+      }
+      nav ul li .nav-anchor {
+         color: white !important;
+         &:hover {
+            color: $accent !important;
+         }
+      }
+   }
+}
+
+.special-header {
+   @media screen and (min-width: 50em) {
+      a {
+         color: $ui_color_01;
+      }
+      nav ul li .nav-anchor {
+         color: $ui_color_01;
+      }
+   }
+}

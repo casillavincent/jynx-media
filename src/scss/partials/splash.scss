@@ -1,0 +1,57 @@
+/* 
+-------------------------------------------
+            SPLASH
+-------------------------------------------
+*/
+section.site-splash {
+   height: 100%;
+   min-height: 900px;
+   @include center-items--col;
+
+   // Main Heading
+   h1 {
+      font-size: 6em;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-family: $brand_font_01;
+      color: rgba(white, 0.85);
+
+      @media screen and (min-width: 50em) {
+         font-size: 10em;
+      }
+   }
+
+   // Headline
+   p.site-splash__headline {
+      padding: 0px 35px;
+      margin-bottom: 35px;
+      max-width: 900px;
+      color: rgba(white, 0.85);
+      font-size: 1.5em;
+      @media screen and (min-width: 50em) {
+         font-size: 1.85em;
+         text-align: center;
+      }
+   }
+
+   // CTA
+   a {
+      text-decoration: none;
+      border-radius: 100px;
+      padding: 15px 50px;
+      background: $accent;
+      color: white;
+      opacity: 0.85;
+   }
+
+   .banner {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      object-fit: cover;
+      z-index: -1;
+      min-height: 900px;
+   }
+}

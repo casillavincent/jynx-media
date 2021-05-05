@@ -1,0 +1,105 @@
+// Work
+.work {
+   width: 100%;
+   height: auto;
+   padding: 50px 0px;
+   color: $ui_color_01;
+}
+
+.work .section-header {
+   color: $ui_color_01;
+   height: 500px;
+   @include center-items--col;
+   padding: 35px;
+   text-align: center;
+   h1 {
+      font-size: 3em;
+      font-family: $brand_font_01;
+      text-transform: uppercase;
+      @media screen and (min-width: 50em) {
+         font-size: 8em;
+      }
+   }
+   p {
+      font-size: 1em;
+      @media screen and (min-width: 50em) {
+         font-size: 1.5em;
+      }
+   }
+}
+
+.work .work-items {
+   width: 100%;
+   @media screen and (min-width: 75em) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 25px;
+      padding: 100px;
+   }
+}
+
+// Single Items
+.work .work-items .work-item {
+   color: $ui_color_01;
+   margin: auto;
+   margin-bottom: 25px;
+   max-width: 1150px;
+   @media screen and (min-width: 50em) {
+      margin-bottom: 50px;
+      &:hover {
+         p {
+            opacity: 1;
+         }
+         p:nth-child(2) {
+            padding-left: 30px;
+         }
+         p:nth-child(3) {
+            padding-left: 35px;
+         }
+      }
+   }
+
+   .img-container {
+      @include center-items--col;
+      overflow: hidden;
+      transition: all 0.3s ease-out;
+      img {
+         width: 100%;
+         margin: auto;
+         transition: all 0.3s ease-out;
+      }
+      &:hover {
+         box-shadow: 0px 5px 25px 3px rgba(black, 0.25);
+
+         img {
+            transform: scale(1.05);
+         }
+      }
+   }
+
+   p {
+      padding: 0px 25px;
+      opacity: 0.7;
+      transition: all 0.3s ease-out;
+   }
+   p:nth-child(2) {
+      font-size: 1em;
+      font-family: $brand_font_01;
+      text-transform: uppercase;
+      margin: 30px 0px 5px 0px;
+      @media screen and (min-width: 50em) {
+         font-size: 1.5em;
+      }
+   }
+   p:nth-child(3) {
+      line-height: 1.2;
+      margin-bottom: 50px;
+      @media screen and (min-width: 50em) {
+         max-width: 750px;
+         font-size: 1em;
+         line-height: 1.5;
+         font-family: $brand_font_02;
+         font-weight: normal;
+      }
+   }
+}

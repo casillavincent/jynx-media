@@ -1,0 +1,88 @@
+// Agency
+.agency {
+   background: $ui_color_01;
+   width: 100%;
+   height: auto;
+   color: white;
+
+   // Title section
+   &__title {
+      height: auto;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 100px;
+      @media screen and (min-width: 50em) {
+         margin-top: 0px;
+         width: 80%;
+         margin-left: auto;
+         margin-right: auto;
+         padding: 200px 25px 100px 25px;
+      }
+
+      h1 {
+         text-transform: uppercase;
+         font-family: $brand_font_02;
+         font-size: 1.15em;
+      }
+      p:nth-child(2) {
+         font-family: $brand_font_01;
+         font-size: 2em;
+         margin-bottom: 15px;
+      }
+      p:nth-child(3) {
+         max-width: 750px;
+      }
+   }
+
+   // Team Members
+   &__team {
+      height: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      padding: 25px;
+      grid-gap: 15px;
+      @media screen and (min-width: 30em) {
+         grid-template-columns: repeat(3, 1fr);
+         margin: auto;
+         grid-gap: 25px;
+      }
+      @media screen and (min-width: 50em) {
+         grid-template-columns: repeat(4, 1fr);
+         width: 80%;
+      }
+
+      // Each team member items
+      .team-member {
+         @media screen and (min-width: 50em) {
+            margin-bottom: 25px;
+         }
+         img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            filter: grayscale(100%) contrast(1.1);
+         }
+         p:nth-child(2) {
+            font-family: $brand_font_01;
+            text-transform: uppercase;
+            margin-top: 15px;
+            font-weight: 500;
+            font-size: 0.8em;
+            @media screen and (min-width: 50em) {
+               font-size: 1em;
+            }
+         }
+         p:nth-child(3) {
+            font-style: italic;
+            font-size: 0.95em;
+            @media screen and (min-width: 50em) {
+               font-size: 1em;
+            }
+         }
+      }
+   }
+}

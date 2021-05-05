@@ -1,0 +1,143 @@
+// Contact Page
+.contact {
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-end;
+   padding: 85px 0px 0px 0px;
+   @media screen and (min-width: 50em) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: end;
+      align-items: end;
+   }
+
+   // Image
+   &__photo {
+      height: auto;
+      width: 100%;
+      min-height: 500px;
+      filter: contrast(1.3);
+      max-width: 500px;
+
+      @media screen and (min-width: 50em) {
+         height: 100vh;
+         object-fit: cover;
+         overflow: hidden;
+      }
+   }
+}
+
+// Title
+.contact .text-content {
+   padding: 25px;
+   width: 100%;
+   @include center-items--col;
+   @media screen and (min-width: 50em) {
+      padding: 50px;
+   }
+   @media screen and (min-width: 75em) {
+      padding-left: 200px;
+   }
+   .title-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 25px 0px 35px 0px;
+      width: 100%;
+      max-width: 700px;
+      @media screen and (min-width: 50em) {
+         margin-bottom: 50px;
+         padding: 0px;
+      }
+      h1 {
+         font-family: $brand_font_02;
+         text-transform: uppercase;
+         margin-bottom: 5px;
+      }
+      p {
+         font-size: 1.5em;
+         font-family: $brand_font_01;
+         line-height: 1;
+         @media screen and (min-width: 50em) {
+            font-size: 2.5em;
+         }
+      }
+   }
+}
+
+// Form
+.contact .text-content {
+   .contact-form {
+      width: 100%;
+      max-width: 700px;
+      @media screen and (min-width: 50em) {
+         min-width: 500px;
+      }
+
+      .form-field {
+         width: inheirt;
+         margin: auto;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+
+         // All field selectors
+         .field-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            width: 100%;
+            @media screen and (min-width: 50em) {
+               margin-bottom: 30px;
+            }
+            label {
+               font-family: $brand_font_01;
+               text-transform: uppercase;
+               font-size: 0.9em;
+               margin-bottom: 5px;
+               &::after {
+                  content: "*";
+               }
+            }
+            input,
+            textarea {
+               text-indent: 10px;
+            }
+            input,
+            select {
+               height: 35px;
+               border-style: none;
+               border-bottom: 1px solid rgba($ui_color_01, 0.8);
+            }
+            .submit {
+               border: 1px solid $ui_color_01;
+               background: transparent;
+               text-indent: 0;
+               transition: all 0.3s ease-out;
+               @media screen and (min-width: 50em) {
+                  max-width: 200px;
+               }
+               &:hover {
+                  cursor: pointer;
+                  color: $accent;
+                  border-color: $accent;
+               }
+            }
+         }
+
+         // Name Selector
+         &__name {
+            width: 100%;
+            @media screen and (min-width: 50em) {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               grid-gap: 20px;
+            }
+         }
+      }
+   }
+}
