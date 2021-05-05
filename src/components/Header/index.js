@@ -12,7 +12,10 @@ const Header = () => {
 
    const sidebarToggler = () => {
       const sidebar = document.querySelector("nav.site-nav");
+      const body = document.querySelector("body");
+
       if (isOpen) {
+         body.setAttribute("style", "overflow: hidden");
          sidebar.classList.add("sidebar-on");
          if (sidebar.classList.contains("sidebar-off")) {
             sidebar.classList.remove("sidebar-off");
@@ -21,6 +24,7 @@ const Header = () => {
          if (sidebar.classList.contains("sidebar-on") === true) {
             sidebar.classList.add("sidebar-off");
          }
+         body.removeAttribute("style");
       }
    };
 
@@ -59,7 +63,7 @@ const Header = () => {
          window.removeEventListener("scroll", toggleDarkHeader);
          window.removeEventListener("scroll", checkIsDesktop);
       };
-   });
+   }, []);
 
    return (
       <header
@@ -81,6 +85,13 @@ const Header = () => {
                   disableOnClick();
                }}
             >
+               {/* List Item 001 */}
+               <li className="li-item">
+                  <Link to={"/"} className="nav-anchor">
+                     Home
+                  </Link>
+               </li>
+
                {/* List Item 001 */}
                <li className="li-item">
                   <Link to={"/agency"} className="nav-anchor">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { VscArrowRight } from "react-icons/vsc";
 
 import Branding from "../assets/services/brand.jpg";
@@ -6,9 +6,9 @@ import Development from "../assets/services/development.jpg";
 import Shopping from "../assets/services/shopping.jpg";
 
 const Services = () => {
-   const [isServices, setIsServices] = useState(false);
    const servicesObj = [
       {
+         id: "01",
          service: "Web Design + Web Development",
          img: Development,
          description:
@@ -21,6 +21,7 @@ const Services = () => {
          ],
       },
       {
+         id: "02",
          service: "Brand Identity",
          img: Branding,
          description:
@@ -33,6 +34,7 @@ const Services = () => {
          ],
       },
       {
+         id: "03",
          service: "eCommerce",
          img: Shopping,
          description:
@@ -47,25 +49,11 @@ const Services = () => {
       },
    ];
 
-   // This function will change the style only for initial load to a dark font
-   const toggleSpecialHeader = () => {
-      const header = document.querySelector("header");
-      if (isServices) {
-         header.classList.add("special-header");
-      }
-   };
-
    useEffect(() => {
-      const header = document.querySelector("header");
-      setIsServices(true);
-      toggleSpecialHeader();
-
-      // Clean up function
-      return () => {
-         setIsServices(false);
-         header.classList.remove("special-header");
-      };
-   });
+      const header = document.querySelector(".site-header");
+      header.classList.add("special-header");
+      return () => header.classList.remove("special-header");
+   }, []);
 
    return (
       <article className="services">
@@ -79,7 +67,7 @@ const Services = () => {
          <section className="services-items">
             {servicesObj.map((service) => {
                return (
-                  <div className="service-item" key={service.img}>
+                  <div className="service-item" key={service.id}>
                      {/* Text Component */}
                      <div className="text-content">
                         <h2>{service.service}</h2>
@@ -88,8 +76,8 @@ const Services = () => {
                         {/* Map through each example */}
 
                         <ul className="examples-container">
-                           {service.examples.map((example) => (
-                              <li>{example}</li>
+                           {service.examples.map((example, i) => (
+                              <li key={i}>{example}</li>
                            ))}
                         </ul>
 

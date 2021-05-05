@@ -51,9 +51,9 @@ const Work = () => {
 
          {/* Work Items */}
          <div className="work-items" data-aos="fade-up" data-aos-delay="400">
-            {workObj.map((work) => {
+            {workObj.map((work, i) => {
                return (
-                  <div className="work-item">
+                  <div className="work-item" key={i}>
                      <a href="#0" className="img-container">
                         {" "}
                         <img src={work.img} alt={work.img} />

@@ -1,28 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ContactImg from "../assets/contact-img.jpg";
 
 const Contact = () => {
-   const [isContact, setIsContact] = useState(false);
-
-   // This function will change the style only for initial load to a dark font
-   const toggleSpecialHeader = () => {
-      const header = document.querySelector("header");
-      if (isContact) {
-         header.classList.add("special-header");
-      }
-   };
-
    useEffect(() => {
-      const header = document.querySelector("header");
-      setIsContact(true);
-      toggleSpecialHeader();
-
-      // Clean up function
-      return () => {
-         setIsContact(false);
-         header.classList.remove("special-header");
-      };
-   });
+      const header = document.querySelector(".site-header");
+      header.classList.add("special-header");
+      return () => header.classList.remove("special-header");
+   }, []);
    return (
       <article className="contact">
          <div className="text-content">

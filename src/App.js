@@ -13,12 +13,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Contact from "./pages/Contact";
+import React from "react";
 
 AOS.init({ easing: "ease-out-quad", duration: 900 });
 
 function App() {
    return (
-      <>
+      <React.Fragment>
          <ParallaxProvider>
             <Router>
                <Header />
@@ -36,7 +37,7 @@ function App() {
                <Footer />
             </Router>
          </ParallaxProvider>
-      </>
+      </React.Fragment>
    );
 }
 
