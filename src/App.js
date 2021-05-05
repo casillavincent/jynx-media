@@ -19,25 +19,23 @@ AOS.init({ easing: "ease-out-quad", duration: 900 });
 
 function App() {
    return (
-      <React.Fragment>
+      <Router>
          <ParallaxProvider>
-            <Router>
-               <Header />
-               <Switch>
-                  <div className="container">
-                     <main className="site-main-page main">
-                        <Route exact path="/" component={Home} />
-                        <Route path="/agency" component={Agency} />
-                        <Route path="/services" component={Services} />
-                        <Route path="/work" component={Work} />
-                        <Route path="/contact" component={Contact} />
-                     </main>
-                  </div>
-               </Switch>
-               <Footer />
-            </Router>
+            <Header />
+            <Switch>
+               <div className="container">
+                  <main className="site-main-page main">
+                     <Route exact path="/" component={Home} />
+                     <Route path="/agency" component={Agency} />
+                     <Route path="/services" component={Services} />
+                     <Route path="/work" component={Work} />
+                     <Route path="/contact" component={Contact} />
+                  </main>
+               </div>
+            </Switch>
+            <Footer />
          </ParallaxProvider>
-      </React.Fragment>
+      </Router>
    );
 }
 
