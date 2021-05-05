@@ -7,7 +7,7 @@ const Footer = () => {
             {/* First Column */}
             <div className="footer-col footer-col-01">
                <p className="logo">Jynx Media</p>
-               <p>For Educational Purposes only</p>
+               <p>For Educational Purposes Only</p>
                <p>&#169; Vincent Casilla</p>
             </div>
             {/* Second Column */}
