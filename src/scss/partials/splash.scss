@@ -14,7 +14,7 @@ section.site-splash {
    }
 
    @media screen and (min-width: 50em) {
-      min-height: 1000px;
+      min-height: 650px;
    }
 
    // Main Heading
@@ -62,7 +62,7 @@ section.site-splash {
       left: 0px;
       object-fit: cover;
       z-index: -1;
-      min-height: 1000px;
+      min-height: 650px;
       @media screen and (max-width: 50em) {
          display: none;
       }

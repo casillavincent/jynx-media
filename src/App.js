@@ -19,7 +19,7 @@ AOS.init({ easing: "ease-out-quad", duration: 900 });
 
 function App() {
    return (
-      <Router>
+      <Router handler={App}>
          <ParallaxProvider>
             <Header />
             <Switch>
