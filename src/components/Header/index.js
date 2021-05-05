@@ -47,6 +47,8 @@ const Header = () => {
 
    useEffect(() => {
       sidebarToggler();
+      checkIsDesktop();
+
       const toggleDarkHeader = () => {
          const header = document.querySelector("header");
          if (window.scrollY >= 350) {
@@ -63,7 +65,7 @@ const Header = () => {
          window.removeEventListener("scroll", toggleDarkHeader);
          window.removeEventListener("scroll", checkIsDesktop);
       };
-   }, []);
+   });
 
    return (
       <header
