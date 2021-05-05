@@ -65,7 +65,7 @@ const Header = () => {
          window.removeEventListener("scroll", toggleDarkHeader);
          window.removeEventListener("scroll", checkIsDesktop);
       };
-   });
+   }, []);
 
    return (
       <header
