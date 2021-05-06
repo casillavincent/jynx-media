@@ -15,7 +15,7 @@ const Header = () => {
       const body = document.querySelector("body");
 
       if (isOpen) {
-         body.setAttribute("style", "overflow: hidden");
+         body.setAttribute("style", "overflow-y: hidden; padding-left: ");
          sidebar.classList.add("sidebar-on");
          if (sidebar.classList.contains("sidebar-off")) {
             sidebar.classList.remove("sidebar-off");
@@ -65,7 +65,7 @@ const Header = () => {
          window.removeEventListener("scroll", toggleDarkHeader);
          window.removeEventListener("scroll", checkIsDesktop);
       };
-   }, []);
+   });
 
    return (
       <header

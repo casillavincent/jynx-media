@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.4058da53.chunk.css",
-    "main.js": "/static/js/main.6f0eebbb.chunk.js",
-    "main.js.map": "/static/js/main.6f0eebbb.chunk.js.map",
+    "main.js": "/static/js/main.db899627.chunk.js",
+    "main.js.map": "/static/js/main.db899627.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6281638a.js",
     "runtime-main.js.map": "/static/js/runtime-main.6281638a.js.map",
     "static/css/2.7fc9bc2b.chunk.css": "/static/css/2.7fc9bc2b.chunk.css",
@@ -37,7 +37,7 @@
     "static/media/people-8.d16ec8f5.jpg": "/static/media/people-8.d16ec8f5.jpg",
     "static/media/people-9.15342c9e.jpg": "/static/media/people-9.15342c9e.jpg",
     "static/media/shopping.50b00b06.jpg": "/static/media/shopping.50b00b06.jpg",
-    "static/media/video1.403fdf5b.mp4": "/static/media/video1.403fdf5b.mp4",
+    "static/media/video1.6dcee48e.mp4": "/static/media/video1.6dcee48e.mp4",
     "static/media/work-1.50e2c6bc.jpg": "/static/media/work-1.50e2c6bc.jpg",
     "static/media/work-2.e7a26df8.jpg": "/static/media/work-2.e7a26df8.jpg",
     "static/media/work-3.1f100553.jpg": "/static/media/work-3.1f100553.jpg",
@@ -48,6 +48,6 @@
     "static/css/2.7fc9bc2b.chunk.css",
     "static/js/2.0e01360f.chunk.js",
     "static/css/main.4058da53.chunk.css",
-    "static/js/main.6f0eebbb.chunk.js"
+    "static/js/main.db899627.chunk.js"
   ]
 }
